@@ -2,3 +2,4 @@ PROFILE|raph|baut|21|raph@|PLANS:sleep@now;dance@night
 PROFILE|Raphael|Bautista|21|Raph@gmail.com|PLANS:
 PROFILE|raph|baut|21|raph@gmail.com|PLANS:dance@tonight;gym@evening
 PROFILE|gg|gg|12|ra|PLANS:gym@nigt;eat@noon
+PROFILE|Raph|Bautista|21|raphbaut@gmail.com|PLANS:gym@evening;eat@noon

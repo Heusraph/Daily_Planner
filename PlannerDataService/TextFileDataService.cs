@@ -109,38 +109,6 @@ namespace PlannerDataService
                 SaveDataToFile();
             }
         }
-
-      /*  public void AddPlan(string description, string time)
-        {
-           
-            if (Profiles.Count > 0)
-            {
-                Profiles[0].Plans.Add(new PlannerSupport { Description = description, Time = time });
-                SaveDataToFile();
-            }
-        }
-
-        public bool RemovePlan(int index)
-        {
-            if (Profiles.Count == 0 || index < 0 || index >= Profiles[0].Plans.Count)
-                return false;
-
-            Profiles[0].Plans.RemoveAt(index);
-            SaveDataToFile();
-            return true;
-        }
-
-        public bool UpdatePlan(int index, string newDesc, string newTime)
-        {
-            if (Profiles.Count == 0 || index < 0 || index >= Profiles[0].Plans.Count)
-                return false;
-
-            Profiles[0].Plans[index].Description = newDesc;
-            Profiles[0].Plans[index].Time = newTime;
-            SaveDataToFile();
-            return true;
-        }
-      */
     }
 }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bauti\\source\\repos\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj": {}
+    "C:\\Users\\bauti\\source\\repository\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bauti\\source\\repos\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj": {
+    "C:\\Users\\bauti\\source\\repository\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bauti\\source\\repos\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj",
+        "projectUniqueName": "C:\\Users\\bauti\\source\\repository\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj",
         "projectName": "PlannerCommon",
-        "projectPath": "C:\\Users\\bauti\\source\\repos\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj",
+        "projectPath": "C:\\Users\\bauti\\source\\repository\\Daily_Planner\\PlannerCommon\\PlannerCommon.csproj",
         "packagesPath": "C:\\Users\\bauti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bauti\\source\\repos\\Daily_Planner\\PlannerCommon\\obj\\",
+        "outputPath": "C:\\Users\\bauti\\source\\repository\\Daily_Planner\\PlannerCommon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

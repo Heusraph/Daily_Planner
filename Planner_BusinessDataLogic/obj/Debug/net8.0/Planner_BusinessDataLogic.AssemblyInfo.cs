@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Planner_BusinessDataLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50d3cc253b91249527e7971735c37a2cf10cd88d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36ff50d44bf86b9a8848fc2191fc736876143491")]
 [assembly: System.Reflection.AssemblyProductAttribute("Planner_BusinessDataLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Planner_BusinessDataLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

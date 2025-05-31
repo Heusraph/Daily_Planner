@@ -24,7 +24,12 @@ namespace PlannerDataService
                 FirstName = "Sasuke",
                 LastName = "Uchiha",
                 Age = 21,
-                Email = "raphael@gmail.com"
+                Email = "raphael@gmail.com",
+                Plans = new List<Plan>
+                {
+                    new Plan { Description = "Train Sharingan", Time = "08:00 AM" },
+                    new Plan { Description = "Seek Itachi", Time = "03:00 PM" }
+                }
             });
         }
         public List<PlannerProfile> GetProfiles()
@@ -52,29 +57,5 @@ namespace PlannerDataService
         {
             profiles.RemoveAll(p => p.Email == profile.Email);
         }
-
-      /*  public void AddPlan(string description, string time)
-        {
-            plans.Add(new Planner_BusinessDataLogic.PlannerSupport { Description = description, Time = time });
-        }
-
-        public bool RemovePlan(int index)
-        {
-            if (index < 0 || index >= plans.Count)
-                return false;
-
-            plans.RemoveAt(index);
-            return true;
-        }
-
-        public bool UpdatePlan(string profileId, int index, string newDesc, string newTime)
-        {
-            if (index < 0 || index >= plans.Count)
-                return false;
-
-            plans[index].Description = newDesc;
-            plans[index].Time = newTime;
-            return true;
-        } */
     }
 }

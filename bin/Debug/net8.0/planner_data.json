@@ -50,5 +50,21 @@
         "Time": "noon"
       }
     ]
+  },
+  {
+    "FirstName": "sasuke",
+    "LastName": "uchiha",
+    "Age": 17,
+    "Email": "sasuke@gmail.com",
+    "Plans": [
+      {
+        "Description": "train sharingan",
+        "Time": "5:00pm"
+      },
+      {
+        "Description": "seek itachi",
+        "Time": "3:30am"
+      }
+    ]
   }
 ]

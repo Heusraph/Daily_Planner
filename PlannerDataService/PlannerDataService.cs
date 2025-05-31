@@ -12,8 +12,8 @@ namespace PlannerDataService
         {
             
             // plannerDataService = new InMemoryDataService();
-             plannerDataService = new TextFileDataService();
-           // plannerDataService = new JsonFileDataService();
+            // plannerDataService = new TextFileDataService();
+            plannerDataService = new JsonFileDataService();
         }
 
         public IPlannerDataService GetDataService()
@@ -39,23 +39,5 @@ namespace PlannerDataService
         {
             plannerDataService.RemoveProfile(profile);
         }
-/*
-        public void AddPlan(string profileId, string description, string time)
-        {
-            plannerDataService.AddPlan(profileId, description, time);
-        }
-
-        public bool RemovePlan(string profileId, int index)
-        {
-            return plannerDataService.RemovePlan(profileId, index);
-        }
-
-
-        public bool UpdatePlan(string profileId, int index, string newDesc, string newTime)
-        {
-            return plannerDataService.UpdatePlan(profileId, index, newDesc, newTime);
-        }
-
-       */
     }
 }

@@ -22,6 +22,7 @@ namespace Daily_Planner
         { 
             Console.WriteLine("YOKOSO to Daily Planner");
 
+
             Console.Write("Enter your First Name: ");
             string fname = Console.ReadLine();
 
@@ -29,6 +30,7 @@ namespace Daily_Planner
             string lname = Console.ReadLine();
 
             Console.Write("Enter your Age: ");
+            
             int age;
             while (true)
             {
@@ -55,6 +57,7 @@ namespace Daily_Planner
                 {
                     Console.WriteLine($"[{i + 1}] {actions[i]}");
                 }
+                Console.WriteLine("---------------------");
 
                 int userInput = GetUserInput();
 
