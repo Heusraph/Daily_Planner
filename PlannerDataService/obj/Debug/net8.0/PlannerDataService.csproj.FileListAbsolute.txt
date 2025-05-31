@@ -1,0 +1,16 @@
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\bin\Debug\net8.0\PlannerDataService.deps.json
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\bin\Debug\net8.0\PlannerDataService.dll
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\bin\Debug\net8.0\PlannerDataService.pdb
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\bin\Debug\net8.0\PlannerCommon.dll
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\bin\Debug\net8.0\PlannerCommon.pdb
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.csproj.AssemblyReference.cache
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.AssemblyInfoInputs.cache
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.AssemblyInfo.cs
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.csproj.CoreCompileInputs.cache
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.sourcelink.json
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerD.F59E5104.Up2Date
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.dll
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\refint\PlannerDataService.dll
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\PlannerDataService.pdb
+C:\Users\bauti\source\repos\Daily_Planner\PlannerDataService\obj\Debug\net8.0\ref\PlannerDataService.dll

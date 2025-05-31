@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DailyPlanner\**" />
+    <Compile Remove="Daily_Planner\**" />
+    <Compile Remove="PlannerCommon\**" />
+    <Compile Remove="PlannerDataService\**" />
+    <Compile Remove="Planner_BusinessDataLogic\**" />
+    <EmbeddedResource Remove="DailyPlanner\**" />
+    <EmbeddedResource Remove="Daily_Planner\**" />
+    <EmbeddedResource Remove="PlannerCommon\**" />
+    <EmbeddedResource Remove="PlannerDataService\**" />
+    <EmbeddedResource Remove="Planner_BusinessDataLogic\**" />
+    <None Remove="DailyPlanner\**" />
+    <None Remove="Daily_Planner\**" />
+    <None Remove="PlannerCommon\**" />
+    <None Remove="PlannerDataService\**" />
+    <None Remove="Planner_BusinessDataLogic\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="PlannerDataService\PlannerDataService.csproj" />
+    <ProjectReference Include="Planner_BusinessDataLogic\Planner_BusinessDataLogic.csproj" />
+  </ItemGroup>
+
+</Project>
