@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PlannerCommon;
 using System.Xml.Linq;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace PlannerService
 {
@@ -31,53 +33,61 @@ namespace PlannerService
                     FirstName = firstName,
                     LastName = lastName,
                     Age = age,
-                    Plans = new List<Plan>()
+                    Plannings = new List<Planning>()
+                    
                 };
                 dataService.AddProfile(this.currentProfile);
             }
         }
+        public List<Planning> GetPlans()
+        {
+            return currentProfile.Plannings;
+        }
 
-        public bool AddPlan(string description, string time)
+        public void AddPlan(string description, string time)
         {
             if (string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
-                return false;
+                return;
 
-            currentProfile.Plans.Add(new Plan{ Description = description, Time = time });
+            currentProfile.Plannings.Add(new Planning { Description = description, Time = time });
             _dataService.UpdateProfile(currentProfile);
-            return true;
         }
 
-        public bool RemovePlan(int index)
+        public void RemovePlan(int index)
         {
-            if (index < 1 || index > currentProfile.Plans.Count)
-                return false;
+            if (index < 0 || index >= currentProfile.Plannings.Count)
+                return;
 
-            currentProfile.Plans.RemoveAt(index - 1);
+            currentProfile.Plannings.RemoveAt(index);
             _dataService.UpdateProfile(currentProfile);
-            return true;
         }
 
-        public bool UpdatePlan(int index, string newDescription, string newTime)
+        public void UpdatePlan(int index, string description, string time)
         {
-            if (index < 1 || index > currentProfile.Plans.Count ||
-                string.IsNullOrWhiteSpace(newDescription) || string.IsNullOrWhiteSpace(newTime))
-                return false;
+            if (index < 0 || index >= currentProfile.Plannings.Count)
+                return;
 
-            var plan = currentProfile.Plans[index - 1];
-            plan.Description = newDescription;
-            plan.Time = newTime;
+            if (string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
+                return;
+
+            currentProfile.Plannings[index].Description = description;
+            currentProfile.Plannings[index].Time = time;
             _dataService.UpdateProfile(currentProfile);
-            return true;
         }
 
-        public List<Plan> GetPlans()
+        public void GetPlan()
         {
-            return currentProfile.Plans;
-        }
+            if (currentProfile.Plannings == null || currentProfile.Plannings.Count == 0)
+            {
+                Console.WriteLine("No plans found.");
+                return;
+            }
 
-        public string GetUserSummary()
-        {
-            return currentProfile.UserSummary();
+            int i = 1;
+            foreach (var plan in currentProfile.Plannings)
+            {
+                Console.WriteLine($"{i++}. {plan.Description} at {plan.Time}");
+            }
         }
     }
 }

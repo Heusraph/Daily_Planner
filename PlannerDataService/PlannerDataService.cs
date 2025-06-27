@@ -3,7 +3,7 @@
 
 namespace PlannerDataService
 {
-    public class PlannerDataService
+    public class PlannerDataService 
     {
         private IPlannerDataService plannerDataService;
         public IPlannerDataService DataService => plannerDataService;
@@ -11,15 +11,17 @@ namespace PlannerDataService
         public PlannerDataService()
         {
             
-            // plannerDataService = new InMemoryDataService();
+            //  plannerDataService = new InMemoryDataService();
             // plannerDataService = new TextFileDataService();
-            plannerDataService = new JsonFileDataService();
+            // plannerDataService = new JsonFileDataService();
+              plannerDataService = new DBDataService();
         }
 
         public IPlannerDataService GetDataService()
         {
             return plannerDataService;
         }
+
         public List<PlannerProfile> GetAllProfiles()
         {
             return plannerDataService.GetProfiles();
@@ -32,12 +34,6 @@ namespace PlannerDataService
         public void UpdateProfile(PlannerProfile profile)
         {
             plannerDataService.UpdateProfile(profile);
-        }
-
-
-        public void RemoveProfile(PlannerProfile profile)
-        {
-            plannerDataService.RemoveProfile(profile);
         }
     }
 }

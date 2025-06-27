@@ -7,19 +7,21 @@ using System.Threading.Tasks;
 using PlannerCommon;
 using PlannerService;
 
+
 namespace Daily_Planner
 {
     internal class Program
     {
         static string[] actions = new string[] { 
-       " Add Plan ", " Remove Plan ", " View Plan ", " Update Plan ", " About", " Exit " };
+       " Add Plan ", " Remove Plan ", " View Plan ", " Update Plan ", " Exit " };
         static string currentUserEmail = string.Empty;
         static string currentProfile = string.Empty;
         static PlannerService.PlannerService plannerService;
-   
+      
         static void Main(string[] args)
-
-        { 
+           
+        {
+            
             Console.WriteLine("YOKOSO to Daily Planner");
 
 
@@ -44,12 +46,12 @@ namespace Daily_Planner
                     Console.Write("Invalid input. Please enter a valid age: ");
                 }
             }
-
+            
             Console.Write("Enter your Email: ");
             currentUserEmail = Console.ReadLine();
             var dataManager = new PlannerDataService.PlannerDataService();
             plannerService = new PlannerService.PlannerService(currentUserEmail, fname, lname, age, dataManager.GetDataService());
-
+      
             while (true)
             {                             
                 Console.WriteLine("\nWelcome to Daily Planner! Please select an action:");
@@ -86,10 +88,6 @@ namespace Daily_Planner
                         UpdatePlan();
                         break;
 
-                    case PlannerAction.About:
-                        Console.WriteLine(plannerService.GetUserSummary());
-                        break;
-
                     case PlannerAction.Exit:
                         Console.WriteLine("Hope to see you again!");
                         return;
@@ -98,8 +96,10 @@ namespace Daily_Planner
                         Console.WriteLine("Invalid choice. Try again.");
                         break;
                 }
-
+                
             }
+      
+
 
         }
         static int GetUserInput()
@@ -146,11 +146,10 @@ namespace Daily_Planner
                 Console.WriteLine("Invalid Input");
             }
 
-            index -= 0;
-            if (plannerService.RemovePlan(index))
-                Console.WriteLine("Plan removed successfully.");
-            else
-                Console.WriteLine("Failed to remove. Please try again.");
+            index -= 1;
+            plannerService.RemovePlan(index);
+            Console.WriteLine("Plan removed successfully.");
+         
         }
 
         static void UpdatePlan()
@@ -171,17 +170,16 @@ namespace Daily_Planner
                 Console.WriteLine("Invalid Input");
             }
 
-            index -= 0;   
+            index -= 1;   
 
             Console.Write("Enter new plan: ");
             string newDesc = Console.ReadLine();
             Console.Write("Enter new time: ");
             string newTime = Console.ReadLine();
 
-            if (plannerService.UpdatePlan(index, newDesc, newTime))
+            plannerService.UpdatePlan(index, newDesc, newTime);
                 Console.WriteLine("Plan updated.");
-            else
-                Console.WriteLine("Invalid input.");
+        
         }
     }
 }

@@ -50,7 +50,7 @@ namespace PlannerDataService
                         var planparts = item.Split('@');
                         if (planparts.Length == 2)
                         {
-                            profile.Plans.Add(new Plan
+                            profile.Plannings.Add(new Planning
                             {
                                 Description = planparts[0],
                                 Time = planparts[1]
@@ -68,7 +68,7 @@ namespace PlannerDataService
 
             foreach (var profile in Profiles)
             {
-                var planStrings = profile.Plans.Select(p => $"{p.Description}@{p.Time}");
+                var planStrings = profile.Plannings.Select(p => $"{p.Description}@{p.Time}");
                 string plansCombined = string.Join(';', planStrings);
                 lines.Add($"PROFILE|{profile.FirstName}|{profile.LastName}|{profile.Age}|{profile.Email}|PLANS:{plansCombined}");
             }
@@ -95,9 +95,11 @@ namespace PlannerDataService
                 existing.FirstName = profile.FirstName;
                 existing.LastName = profile.LastName;
                 existing.Age = profile.Age;
-                existing.Plans = profile.Plans;
-                SaveDataToFile();
+                existing.Plannings = profile.Plannings;
+                
+                SaveDataToFile();   
             }
+           
         }
 
         public void RemoveProfile(PlannerProfile profile)
@@ -109,6 +111,7 @@ namespace PlannerDataService
                 SaveDataToFile();
             }
         }
+
     }
 }
 

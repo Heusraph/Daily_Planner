@@ -14,7 +14,6 @@ namespace PlannerCommon
         Remove,
         View,
         Update,
-        About,
         Exit
     }
 }

@@ -9,6 +9,7 @@ namespace PlannerDataService
        public List<PlannerProfile> GetProfiles();
        public void AddProfile(PlannerProfile profile);
        public void UpdateProfile(PlannerProfile profile);
-       public void RemoveProfile(PlannerProfile profileId);
+       public void RemoveProfile(PlannerProfile profile);
+      
     }
 }

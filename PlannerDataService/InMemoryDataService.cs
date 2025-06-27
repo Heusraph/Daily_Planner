@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using PlannerCommon;
 
 namespace PlannerDataService
 {
-    public class InMemoryPlannerDataService : IPlannerDataService
+    public class InMemoryDataService : IPlannerDataService
     {
         private List<PlannerProfile> profiles = new List<PlannerProfile>();
        
 
-        public InMemoryPlannerDataService()
+        public InMemoryDataService()
         {
             CreateDummyProfile();
         }
@@ -25,10 +26,10 @@ namespace PlannerDataService
                 LastName = "Uchiha",
                 Age = 21,
                 Email = "raphael@gmail.com",
-                Plans = new List<Plan>
+                Plannings = new List<Planning>
                 {
-                    new Plan { Description = "Train Sharingan", Time = "08:00 AM" },
-                    new Plan { Description = "Seek Itachi", Time = "03:00 PM" }
+                    new Planning { Description = "Train Sharingan", Time = "08:00 AM" },
+                    new Planning { Description = "Seek Itachi", Time = "03:00 PM" }
                 }
             });
         }
@@ -57,5 +58,6 @@ namespace PlannerDataService
         {
             profiles.RemoveAll(p => p.Email == profile.Email);
         }
+
     }
 }

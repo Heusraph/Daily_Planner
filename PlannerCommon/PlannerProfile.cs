@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace PlannerCommon
 {
-    public class Plan
-    {
-        public string Description { get; set; }
-        public string Time { get; set; }
-    }
     public class PlannerProfile
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
-        public List<Plan> Plans { get; set; } = new List<Plan>();
+        public List<Planning> Plannings { get; set; } = new List<Planning>();
 
-        public string UserSummary()
-        {
-            return $"Name: {FirstName} {LastName}\nAge: {Age}\nEmail: {Email}";
-        }
     }
+
+    public class Planning
+    {
+        public string Description { get; set; }
+        public string Time { get; set; }
+   
+    } 
 }

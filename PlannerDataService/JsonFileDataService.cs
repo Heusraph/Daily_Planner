@@ -59,7 +59,8 @@ namespace PlannerDataService
                 existing.LastName = profile.LastName;
                 existing.Age = profile.Age;
                 existing.Email = profile.Email;
-                existing.Plans = profile.Plans;
+                existing.Plannings = profile.Plannings;
+              
 
                 WriteJsonDataToFile();
             }
@@ -74,5 +75,6 @@ namespace PlannerDataService
                 WriteJsonDataToFile();
             }
         }
+      
     }
 }
