@@ -37,8 +37,11 @@ namespace PlannerService
                     
                 };
                 dataService.AddProfile(this.currentProfile);
+
             }
         }
+
+       
         public List<Planning> GetPlans()
         {
             return currentProfile.Plannings;

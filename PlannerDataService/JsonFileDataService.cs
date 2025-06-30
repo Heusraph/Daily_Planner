@@ -55,10 +55,10 @@ namespace PlannerDataService
             var existing = Profiles.FirstOrDefault(p => p.Email == profile.Email);
             if (existing != null)
             {
+                existing.Email = profile.Email;
                 existing.FirstName = profile.FirstName;
                 existing.LastName = profile.LastName;
                 existing.Age = profile.Age;
-                existing.Email = profile.Email;
                 existing.Plannings = profile.Plannings;
               
 

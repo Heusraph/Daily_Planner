@@ -36,10 +36,11 @@ namespace PlannerDataService
                 {
                     var profile = new PlannerProfile
                     {
-                        FirstName = parts[1],
-                        LastName = parts[2],
+                        Email = parts[1],
+                        FirstName = parts[2],
+                        LastName = parts[3],
                         Age = age,
-                        Email = parts[4]
+                       
                     };
 
                     var planPart = parts[5].Replace("PLANS:", "");
@@ -69,8 +70,9 @@ namespace PlannerDataService
             foreach (var profile in Profiles)
             {
                 var planStrings = profile.Plannings.Select(p => $"{p.Description}@{p.Time}");
-                string plansCombined = string.Join(';', planStrings);
-                lines.Add($"PROFILE|{profile.FirstName}|{profile.LastName}|{profile.Age}|{profile.Email}|PLANS:{plansCombined}");
+                string plansCombined = string.Join('|', planStrings);
+                lines.Add($"PROFILE|{profile.Email}|{profile.FirstName}|{profile.LastName}|{profile.Age}");
+                lines.Add($"PLANS:{plansCombined}");
             }
 
             File.WriteAllLines(dataFilePath, lines);
