@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PlannerCommon;
+using PlannerDataService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WinFormsAppDP
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private string email;
+        private IPlannerDataService dataService;
+      
+        public Form2(string email, IPlannerDataService dataService)
         {
             InitializeComponent();
+            this.email = email;
+            this.dataService = dataService;
+           
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -29,43 +38,37 @@ namespace WinFormsAppDP
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            if (ValidateUserDetails())
-            {
-                try
-                {
-                    Form3 mainPlanner = new Form3(
-                        txtFirstName.Text.Trim(),
-                        txtLastName.Text.Trim(),
-                        int.Parse(txtAge.Text));
+            string firstName = txtFirstName.Text.Trim();
+            string lastName = txtLastName.Text.Trim();
+            int age = int.Parse(txtAge.Text.Trim());
 
-                    this.Hide();
-                    mainPlanner.ShowDialog();
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
+            PlannerService.PlannerService plannerService = new PlannerService.PlannerService(email, firstName, lastName, age, dataService);
+
+            Form3 plannerForm = new Form3(plannerService, dataService, firstName);
+            this.Hide();
+            plannerForm.ShowDialog();
+            this.Close();
         }
+        
+        
 
         private bool ValidateUserDetails()
         {
-            // First Name validation
+           
             if (string.IsNullOrWhiteSpace(txtFirstName.Text))
             {
                 ShowError("Please enter first name", txtFirstName);
                 return false;
             }
 
-            // Last Name validation
+         
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
             {
                 ShowError("Please enter last name", txtLastName);
                 return false;
             }
 
-            // Age validation
+           
             if (!int.TryParse(txtAge.Text, out int age) || age < 1 || age > 120)
             {
                 ShowError("Please enter valid age (1-120)", txtAge);

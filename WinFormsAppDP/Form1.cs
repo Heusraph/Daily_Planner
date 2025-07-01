@@ -5,13 +5,16 @@ namespace WinFormsAppDP
 {
     public partial class Form1 : Form
     {
-      
-        public Form1()
+        private IPlannerDataService dataService;
+        public Form1(IPlannerDataService dataService)
         {
-            
+
             InitializeComponent();
-            
+            this.dataService = dataService;
+
+            var profiles = dataService.GetProfiles();
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -20,21 +23,24 @@ namespace WinFormsAppDP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string email = txtEmail.Text.Trim();
             if (ValidateEmail(txtEmail.Text))
             {
                 var soundBytes = Properties.Resources.sharingan;
                 using (var stream = new System.IO.MemoryStream(soundBytes))
                 {
-                    new System.Media.SoundPlayer(stream).Play();
+                    new SoundPlayer(stream).Play();
                 }
-                Form2 setupForm = new Form2();
+                
+                var setupForm = new Form2(email, dataService);
                 this.Hide();
                 setupForm.ShowDialog();
                 this.Close();
-            }
 
-          
+            }
         }
+
+      
         private bool ValidateEmail(string email)
         {
             try
@@ -61,7 +67,11 @@ namespace WinFormsAppDP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var profiles = dataService.GetProfiles();
+            if (profiles.Any())
+                MessageBox.Show("First profile: " + profiles[0].FirstName);
+            else
+                MessageBox.Show("no profiles");
         }
     }
 }

@@ -13,7 +13,10 @@ namespace WinFormsAppDP
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var dataServiceWrapper = new PlannerDataService.PlannerDataService();
+            var dataService = dataServiceWrapper.GetDataService();
+            Application.Run(new Form1(dataService));
         }
     }
 }

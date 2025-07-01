@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Daily_Planner\PlannerDataService\PlannerDataService.csproj" />
+    <ProjectReference Include="..\Daily_Planner\Planner_BusinessDataLogic\Planner_BusinessDataLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
