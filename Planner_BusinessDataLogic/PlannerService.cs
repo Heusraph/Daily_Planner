@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using System.ComponentModel;
 using System.Reflection;
 
+
 namespace PlannerService
 {
     public class PlannerService
@@ -37,7 +38,9 @@ namespace PlannerService
                     
                 };
                 dataService.AddProfile(this.currentProfile);
+                EmailService.SendEmail(userEmail, firstName, lastName);
 
+               
             }
         }
 

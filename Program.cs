@@ -17,7 +17,9 @@ namespace Daily_Planner
         static string currentUserEmail = string.Empty;
         static string currentProfile = string.Empty;
         static PlannerService.PlannerService plannerService;
-        
+
+        public static object Email { get; private set; }
+
         static void Main(string[] args)
            
         {
@@ -25,7 +27,7 @@ namespace Daily_Planner
             Console.WriteLine("YOKOSO to Daily Planner");
 
             Console.Write("Enter your Email: ");
-            currentUserEmail = Console.ReadLine();
+            string currentUserEmail = Console.ReadLine();
 
             Console.Write("Enter your First Name: ");
             string fname = Console.ReadLine();
