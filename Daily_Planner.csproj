@@ -13,20 +13,34 @@
     <Compile Remove="PlannerCommon\**" />
     <Compile Remove="PlannerDataService\**" />
     <Compile Remove="Planner_BusinessDataLogic\**" />
+    <Compile Remove="Properties\**" />
+    <Compile Remove="WebApplicationDP\**" />
+    <Compile Remove="WinFormsAppDP\**" />
     <EmbeddedResource Remove="DailyPlanner\**" />
     <EmbeddedResource Remove="Daily_Planner\**" />
     <EmbeddedResource Remove="PlannerCommon\**" />
     <EmbeddedResource Remove="PlannerDataService\**" />
     <EmbeddedResource Remove="Planner_BusinessDataLogic\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <EmbeddedResource Remove="WebApplicationDP\**" />
+    <EmbeddedResource Remove="WinFormsAppDP\**" />
     <None Remove="DailyPlanner\**" />
     <None Remove="Daily_Planner\**" />
     <None Remove="PlannerCommon\**" />
     <None Remove="PlannerDataService\**" />
     <None Remove="Planner_BusinessDataLogic\**" />
+    <None Remove="Properties\**" />
+    <None Remove="WebApplicationDP\**" />
+    <None Remove="WinFormsAppDP\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="PlannerDataService\PlannerDataService.csproj" />
+    <PackageReference Include="MailKit" Version="4.14.1" />
+    <PackageReference Include="MimeKit" Version="4.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="PlannerCommon\PlannerCommon.csproj" />
     <ProjectReference Include="Planner_BusinessDataLogic\Planner_BusinessDataLogic.csproj" />
   </ItemGroup>
 

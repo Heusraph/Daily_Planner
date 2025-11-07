@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerCommon", "PlannerCom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerDataService", "PlannerDataService\PlannerDataService.csproj", "{636D8520-F938-42E9-ABC5-A28D3B6B79F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsAppDP", "..\WinFormsAppDP\WinFormsAppDP.csproj", "{22512917-64E2-4BD9-9D7D-46F6634685B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationDP", "..\WebApplicationDP\WebApplicationDP.csproj", "{5A2378F2-6BE3-6F5B-A33F-FAD4FA536BD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{636D8520-F938-42E9-ABC5-A28D3B6B79F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{636D8520-F938-42E9-ABC5-A28D3B6B79F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{636D8520-F938-42E9-ABC5-A28D3B6B79F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22512917-64E2-4BD9-9D7D-46F6634685B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22512917-64E2-4BD9-9D7D-46F6634685B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22512917-64E2-4BD9-9D7D-46F6634685B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22512917-64E2-4BD9-9D7D-46F6634685B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2378F2-6BE3-6F5B-A33F-FAD4FA536BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2378F2-6BE3-6F5B-A33F-FAD4FA536BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2378F2-6BE3-6F5B-A33F-FAD4FA536BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2378F2-6BE3-6F5B-A33F-FAD4FA536BD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

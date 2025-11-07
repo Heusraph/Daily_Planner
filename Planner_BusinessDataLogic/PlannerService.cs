@@ -14,19 +14,21 @@ namespace PlannerService
 {
     public class PlannerService
     {
-        private PlannerProfile currentProfile;
+        private static PlannerProfile currentProfile;
         private IPlannerDataService _dataService;
-
-       
-        public PlannerService(string userEmail, string firstName, string lastName, int age, IPlannerDataService dataService)
+        private readonly EmailService _emailService;
+        public PlannerService(EmailService emailService)
         {
+            _emailService = emailService;
+        }
+        public void AddAccount(string userEmail, string firstName, string lastName, int age, IPlannerDataService dataService)
+        {
+
             _dataService = dataService;
-           var allProfiles = dataService.GetProfiles();
-           this.currentProfile = allProfiles.FirstOrDefault(p => p.Email == userEmail);
-          
 
-
-            if (this.currentProfile == null)
+            var allProfiles = dataService.GetProfiles();
+            currentProfile = allProfiles.FirstOrDefault(p => p.Email == userEmail);
+            if (currentProfile == null)
             {
                 currentProfile = new PlannerProfile
                 {
@@ -35,16 +37,17 @@ namespace PlannerService
                     LastName = lastName,
                     Age = age,
                     Plannings = new List<Planning>()
-                    
-                };
-                dataService.AddProfile(this.currentProfile);
-                EmailService.SendEmail(userEmail, firstName, lastName);
 
-               
+                };
+                dataService.AddProfile(currentProfile);
             }
+
         }
 
-       
+        //public PlannerService(string email, string firstName, string lastName, int age, IPlannerDataService dataService)
+        //{
+        //}
+
         public List<Planning> GetPlans()
         {
             return currentProfile.Plannings;
@@ -55,8 +58,9 @@ namespace PlannerService
             if (string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
                 return;
 
-            currentProfile.Plannings.Add(new Planning { Description = description, Time = time });
-            _dataService.UpdateProfile(currentProfile);
+              //currentProfile.Plannings.Add(new Planning { Description = description, Time = time });
+            //_dataService.UpdateProfile(currentProfile);
+            _emailService.SendEmail("RaphaelBautista@gmail.com", "John Raphael", "Bautista");
         }
 
         public void RemovePlan(int index)

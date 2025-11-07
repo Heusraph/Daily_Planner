@@ -11,10 +11,10 @@ namespace PlannerDataService
         public PlannerDataService()
         {
             
-            //  plannerDataService = new InMemoryDataService();
-             plannerDataService = new TextFileDataService();
+              plannerDataService = new InMemoryDataService();
+           //plannerDataService = new TextFileDataService();
            // plannerDataService = new JsonFileDataService();
-             // plannerDataService = new DBDataService();
+             //plannerDataService = new DBDataService();
         }
 
         public IPlannerDataService GetDataService()

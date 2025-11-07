@@ -6,7 +6,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Threading.Tasks;
 using PlannerCommon;
 using PlannerService;
-
+using Microsoft.Extensions.Configuration;
 
 namespace Daily_Planner
 {
@@ -16,14 +16,17 @@ namespace Daily_Planner
        " Add Plan ", " Remove Plan ", " View Plan ", " Update Plan ", " Exit " };
         static string currentUserEmail = string.Empty;
         static string currentProfile = string.Empty;
+
         static PlannerService.PlannerService plannerService;
+
+        private static readonly EmailService emailService;
 
         public static object Email { get; private set; }
 
         static void Main(string[] args)
            
         {
-            
+                  
             Console.WriteLine("YOKOSO to Daily Planner");
 
             Console.Write("Enter your Email: ");
@@ -52,7 +55,8 @@ namespace Daily_Planner
             }
             
             var dataManager = new PlannerDataService.PlannerDataService();
-            plannerService = new PlannerService.PlannerService(currentUserEmail, fname, lname, age, dataManager.GetDataService());
+            //plannerService = new PlannerService.PlannerService();
+            plannerService.AddAccount(currentUserEmail, fname, lname, age, dataManager.GetDataService());
       
             while (true)
             {                             

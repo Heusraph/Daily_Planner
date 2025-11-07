@@ -1,31 +1,46 @@
 ﻿using MimeKit;
+using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Configuration;
 
 namespace PlannerService
 {
     public class EmailService
     {
-        public static void SendEmail(string userEmail, string firstname, string lastname)
+        private readonly IConfiguration _configuration;
+
+        public EmailService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        public void SendEmail(string userEmail, string firstname, string lastname)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Daily Plan", "test@example.com"));
-            message.To.Add(new MailboxAddress("Profile", "raphaelbautista2@gmail.com"));
+            message.From.Add(new MailboxAddress(
+                _configuration["EmailSettings:FromName"],
+                _configuration["EmailSettings:FromEmail"]
+            ));
+            message.To.Add(new MailboxAddress("Profile", userEmail));
             message.Subject = "Email Connection";
             message.Body = new TextPart("plain")
             {
                 Text = $"{firstname} {lastname}\n \n" +
                 $"Your schedule has been successfully generated."
-
             };
+
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                var smtpHost = "sandbox.smtp.mailtrap.io";
-                var smtpPort = 2525;
-                var userName = "e4f62a0478e705";
-                var password = "ac387412394eeb";
+                client.Connect(
+                    _configuration["EmailSettings:SmtpHost"],
+                    int.Parse(_configuration["EmailSettings:SmtpPort"]),
+                    SecureSocketOptions.StartTls
+                );
 
-                client.Connect(smtpHost, smtpPort, SecureSocketOptions.StartTls);
-                client.Authenticate(userName, password);
+                client.Authenticate(
+                    _configuration["EmailSettings:Username"],
+                    _configuration["EmailSettings:Password"]
+                );
 
                 client.Send(message);
                 client.Disconnect(true);
